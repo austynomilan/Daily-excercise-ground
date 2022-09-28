@@ -37,10 +37,24 @@ function loadScript(src){
 
 let promise = loadScript("https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.js")
 promise.then(
-    script => alert(`the script ${script.src} is loaded`),
+    result => alert(`the script ${result.src} is loaded`),
     error => alert(`Error: ${error.message}`)
 )
 
 promise.then(
     script => alert('Another handler...')
 )
+
+
+// delay with a promise
+
+function delay(ms){
+return new Promise(resolve => setTimeout(resolve, ms))    
+}
+
+delay(3000).then(() => alert('runs after 3 seconds'));
+
+
+function go(){
+    
+}
